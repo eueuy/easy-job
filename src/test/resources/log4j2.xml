@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout>
+                <pattern>%d [%-5p] :  %m%n</pattern>
+            </PatternLayout>
+        </Console>
+
+        <RollingFile name="File" fileName="logs/log.log" filePattern="logs/log-%d{yyyy-MM-dd}-%i.log">
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d [%t] %-5p - %m (%C:%L) -%-4r%n"/>
+            <SizeBasedTriggeringPolicy size="50MB"/>
+            <DefaultRolloverStrategy max="2"/>
+        </RollingFile>
+
+    </Appenders>
+    <Loggers>
+        <!--<Logger id="org.easyjob.allocation" level="info">-->
+            <!--<ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>-->
+            <!--<AppenderRef ref="Console"/>-->
+        <!--</Logger>-->
+
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
