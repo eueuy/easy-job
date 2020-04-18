@@ -17,7 +17,7 @@ class CuratorFrameworkTest {
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
         CuratorFramework client =
                 CuratorFrameworkFactory.builder()
-                        .connectString("10.201.3.102:2181")
+                        .connectString("localhost:9092")
                         .sessionTimeoutMs(5000)
                         .connectionTimeoutMs(5000)
                         .retryPolicy(retryPolicy)

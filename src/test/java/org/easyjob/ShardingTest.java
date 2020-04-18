@@ -10,7 +10,7 @@ public class ShardingTest {
     public static void main(String[] args) throws IOException {
 
         ZookeeperConfiguration zkConfig = ZookeeperConfiguration.builder()
-                .connectString("10.201.3.102:2181,10.201.3.103:2181,10.201.3.104:2181")
+                .connectString("localhost:9092")
                 .build();
 
         JobNode jobNode1 = new JobNode("easy-job-dev6", "node1", 50, 50, zkConfig);
